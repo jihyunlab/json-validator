@@ -3,7 +3,7 @@
 [![Version](https://img.shields.io/npm/v/@jihyunlab/json-validator.svg?style=flat-square)](https://www.npmjs.com/package/@jihyunlab/json-validator?activeTab=versions) [![Downloads](https://img.shields.io/npm/dt/@jihyunlab/json-validator.svg?style=flat-square)](https://www.npmjs.com/package/@jihyunlab/json-validator) [![Last commit](https://img.shields.io/github/last-commit/jihyunlab/json-validator.svg?style=flat-square)](https://github.com/jihyunlab/json-validator/graphs/commit-activity) [![License](https://img.shields.io/github/license/jihyunlab/json-validator.svg?style=flat-square)](https://github.com/jihyunlab/json-validator/blob/master/LICENSE) [![Linter](https://img.shields.io/badge/linter-eslint-blue?style=flat-square)](https://eslint.org) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)\
 [![Build](https://github.com/jihyunlab/json-validator/actions/workflows/build.yml/badge.svg)](https://github.com/jihyunlab/json-validator/actions/workflows/build.yml) [![Lint](https://github.com/jihyunlab/json-validator/actions/workflows/lint.yml/badge.svg)](https://github.com/jihyunlab/json-validator/actions/workflows/lint.yml)
 
-@jihyunlab/json-validator was developed based on JSON schema and ajv to make configuring NestJS validation pipes easier and more convenient. @jihyunlab/json-validator also provides a separate validation helper that can be used even outside of a NestJS environment.
+@jihyunlab/json-validator was developed based on JSON Schema and ajv to make configuring NestJS validation pipes easier and more convenient. @jihyunlab/json-validator also provides a separate validation helper that can be used even outside of a NestJS environment.
 
 ## Installation
 
@@ -13,7 +13,7 @@ npm i @jihyunlab/json-validator
 
 ## Usage
 
-JSON schemas are defined for request validation. Depending on how the controller receives the request data, JSON schemas can be configured for the query, parameter, and body.
+JSON Schemas are defined for request validation. Depending on how the controller receives the request data, JSON Schemas can be configured for the query, parameter, and body.
 
 ```
 import { RequestJsonSchema } from '@jihyunlab/json-validator';
@@ -46,7 +46,7 @@ export const UserJsonSchema: Record<'find' | 'findOne', RequestJsonSchema> = {
 };
 ```
 
-A validation pipe can be easily implemented by using the JSON schema defined in the NestJS controller.
+A validation pipe can be easily implemented by using the JSON Schema defined in the NestJS controller.
 
 ```
 import { JsonValidationPipe } from '@jihyunlab/json-validator';
