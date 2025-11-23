@@ -16,9 +16,9 @@ npm i @jihyunlab/json-validator
 JSON Schemas are defined for request validation. Depending on how the controller receives the request data, JSON Schemas can be configured for the query, parameter, and body.
 
 ```
-import { RequestJsonSchema } from '@jihyunlab/json-validator';
+import { JsonRequestSchema } from '@jihyunlab/json-validator';
 
-export const UserJsonSchema: Record<'find' | 'findOne', RequestJsonSchema> = {
+export const UserJsonSchema: Record<'find' | 'findOne', JsonRequestSchema> = {
   find: {
     query: {
       type: 'object',

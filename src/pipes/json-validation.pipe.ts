@@ -4,13 +4,13 @@ import {
   BadRequestException,
 } from '@nestjs/common';
 import {
-  RequestJsonSchema,
+  JsonRequestSchema,
   JsonValidationResult,
 } from '../interfaces/json-validation.interface';
 import { JsonValidationHelper } from '../helpers/json-validation.helper';
 
 export class JsonValidationPipe implements PipeTransform {
-  constructor(private readonly requestJsonSchema: RequestJsonSchema) {}
+  constructor(private readonly jsonRequestSchema: JsonRequestSchema) {}
 
   async transform(value: any, metadata: ArgumentMetadata) {
     if (!metadata || !metadata.type) {
@@ -22,24 +22,24 @@ export class JsonValidationPipe implements PipeTransform {
       message: 'The request has passed validation.',
     };
 
-    if (metadata.type === 'param' && this.requestJsonSchema.parameter) {
+    if (metadata.type === 'param' && this.jsonRequestSchema.parameter) {
       result = await JsonValidationHelper.validate(
         value,
-        this.requestJsonSchema.parameter
+        this.jsonRequestSchema.parameter
       );
     }
 
-    if (metadata.type === 'query' && this.requestJsonSchema.query) {
+    if (metadata.type === 'query' && this.jsonRequestSchema.query) {
       result = await JsonValidationHelper.validate(
         value,
-        this.requestJsonSchema.query
+        this.jsonRequestSchema.query
       );
     }
 
-    if (metadata.type === 'body' && this.requestJsonSchema.body) {
+    if (metadata.type === 'body' && this.jsonRequestSchema.body) {
       result = await JsonValidationHelper.validate(
         value,
-        this.requestJsonSchema.body
+        this.jsonRequestSchema.body
       );
     }
 

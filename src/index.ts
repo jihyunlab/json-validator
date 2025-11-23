@@ -1,13 +1,13 @@
 import { JsonValidationPipe } from './pipes/json-validation.pipe';
 import { JsonValidationHelper } from './helpers/json-validation.helper';
 import {
-  RequestJsonSchema,
+  JsonRequestSchema,
   JsonValidationResult,
 } from './interfaces/json-validation.interface';
 
 export {
   JsonValidationPipe,
   JsonValidationHelper,
-  RequestJsonSchema,
+  JsonRequestSchema,
   JsonValidationResult,
 };

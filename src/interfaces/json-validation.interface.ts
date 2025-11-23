@@ -1,4 +1,4 @@
-export interface RequestJsonSchema {
+export interface JsonRequestSchema {
   parameter?: object;
   query?: object;
   body?: object;
