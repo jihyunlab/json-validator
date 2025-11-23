@@ -4,9 +4,9 @@ import Ajv from 'ajv';
 const ajv = new Ajv();
 
 export const JsonValidationHelper = {
-  async validate(json: object, schema: object): Promise<JsonValidationResult> {
-    if (!json) {
-      return { valid: false, message: 'The json parameter is missing.' };
+  async validate(value: any, schema: object): Promise<JsonValidationResult> {
+    if (!value) {
+      return { valid: false, message: 'The value parameter is missing.' };
     }
 
     if (!schema) {
@@ -14,7 +14,7 @@ export const JsonValidationHelper = {
     }
 
     const validate = ajv.compile(schema);
-    const valid = validate(json);
+    const valid = validate(value);
 
     if (!valid) {
       if (validate.errors) {
